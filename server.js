@@ -14,10 +14,10 @@ mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopol
   .then(() => console.log('Connected to MongoDB'))
   .catch(err => console.error('Could not connect to MongoDB', err));
 
-// Routes (to be implemented)
-// app.use('/api/users', require('./routes/users'));
-// app.use('/api/games', require('./routes/games'));
-// app.use('/api/teams', require('./routes/teams'));
+// Routes
+app.use('/api/users', require('./routes/users'));
+app.use('/api/games', require('./routes/games'));
+app.use('/api/teams', require('./routes/teams'));
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
